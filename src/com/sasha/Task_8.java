@@ -17,5 +17,6 @@ public class Task_8 {
             i++;
         }
         System.out.println("факториал числа " + factorial);
+        System.out.println("Просто попытка сделать ответвление");
     }
 }

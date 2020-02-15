@@ -16,6 +16,6 @@ public class Task_8 {
              factorial*= i;
             i++;
         }
-        System.out.println(factorial);
+        System.out.println("факториал числа " + factorial);
     }
 }

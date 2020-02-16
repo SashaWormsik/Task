@@ -11,15 +11,15 @@ public class Task_6 {
         Scanner userInput = new Scanner(System.in);
         System.out.print("Введите год: ");
         int year = userInput.nextInt();
-        int dayInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] dayInMonth;
         if (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)) {
-            dayInMonth[1] = 28;
+            dayInMonth = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         } else {
-            dayInMonth[1] = 29;
+            dayInMonth = new int[]{31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         }
         System.out.print("Введите месяц (в числовом формате): ");
         int month = userInput.nextInt();
-        while (month > 12 && month < 0) {
+        while (month < 0 || month > 12) {
             System.out.print("Введите месяц (ОТ 1 ДО 12)!!!!: ");
             month = userInput.nextInt();
         }

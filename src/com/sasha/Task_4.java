@@ -15,7 +15,7 @@ public class Task_4 {
         int sideB = userInput.nextInt();
         System.out.print("Введите радиус r: ");
         int radius = userInput.nextInt();
-        double diagonal = Math.pow((sideA * sideA + sideB * sideB), 0.5);
+        double diagonal = Math.sqrt((sideA * sideA + sideB * sideB));
         if (2 * radius >= diagonal) {
             System.out.println("да");
         } else{

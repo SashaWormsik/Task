@@ -13,7 +13,7 @@ public class Task_8 {
         long factorial = 1;
         long i = 1;
         while (i <= numbFactorial) {
-             factorial*= i;
+            factorial *= i;
             i++;
         }
         System.out.println("факториал числа " + factorial);

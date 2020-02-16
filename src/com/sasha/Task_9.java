@@ -1,6 +1,10 @@
 package com.sasha;
 
 public class Task_9 {
+    /*
+    Имеется последовательность случайных чисел,
+    найти и вывести наибольшее из них.
+     */
     public static void main(String[] args) {
         int max = 0;
         int x = (int) (Math.random() * 20);

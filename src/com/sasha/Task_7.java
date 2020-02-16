@@ -23,22 +23,33 @@ public class Task_7 {
         float sizeE = userInput.nextFloat();
         System.out.print("Введите сторону участка f: ");
         float sizeF = userInput.nextFloat();
-        float [] sizeHome1 = {sizeA, sizeB};
-        float [] sizeHome2 = {sizeC, sizeD};
+        float[] sizeHome1 = {sizeA, sizeB};
+        float[] sizeHome2 = {sizeC, sizeD};
+        float[] sizeArea = {sizeE, sizeF};
+        Arrays.sort(sizeArea);
         Arrays.sort(sizeHome1);
         Arrays.sort(sizeHome2);
-        float largestSizeHomes = Math.max(sizeHome1[1], sizeHome2[1]);
-        float largestSizeArea = Math.max(sizeE, sizeF);
-        float smallestSizeArea = Math.min(sizeE, sizeF);
-        if (largestSizeArea > largestSizeHomes){
-            if (smallestSizeArea >(sizeHome1[0]+sizeHome2[0])){
+        float squareHome = sizeA * sizeB + sizeC * sizeD;
+        float squareArea = sizeE * sizeF;
+        float[] version1TwoHome = {sizeHome1[1] + sizeHome2[1], Math.max(sizeHome1[0], sizeHome2[0])};
+        float[] version2TwoHome = {sizeHome1[1] + sizeHome2[0], Math.max(sizeHome1[0], sizeHome2[1])};
+        float[] version3TwoHome = {Math.max(sizeHome1[1], sizeHome2[1]), sizeHome1[0] + sizeHome2[0]};
+        Arrays.sort(version1TwoHome);
+        Arrays.sort(version2TwoHome);
+        Arrays.sort(version3TwoHome);
+        if (squareArea >= squareHome) {
+            if (sizeArea[1] >= version1TwoHome[1] && sizeArea[0] >= version1TwoHome[0]) {
                 System.out.println("Дома помещаются");
+            } else if (sizeArea[1] >= version2TwoHome[1] && sizeArea[0] >= version2TwoHome[0]) {
+                System.out.println("Дома помещаются");
+            } else if (sizeArea[1] >= version3TwoHome[1] && sizeArea[0] >= version3TwoHome[0]) {
+                System.out.println("Дома помещаются");
+            } else {
+                System.out.println("Дома не поместяться!!!!");
             }
-            else {
-                System.out.println("Дома не влезут");
-            }
-        }else {
-            System.out.println("Дома не влезут");
+        } else {
+            System.out.println("Дома не поместяться!!!!");
         }
+
     }
 }

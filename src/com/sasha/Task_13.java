@@ -21,12 +21,10 @@ public class Task_13 {
                     a = false;
                     break;
                 }
-
             }
             if (a) {
                 System.out.print(i + " ");
             }
-
         }
         long t1 = System.currentTimeMillis();
         System.out.println(" ");

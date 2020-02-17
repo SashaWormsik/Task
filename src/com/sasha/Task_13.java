@@ -27,7 +27,7 @@ public class Task_13 {
             }
         }
         long t1 = System.currentTimeMillis();
-        System.out.println(" ");
+        System.out.println("ремя выполнения ...");
         System.out.println(t1 - t);
     }
 }

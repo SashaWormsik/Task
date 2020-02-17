@@ -34,15 +34,19 @@ public class Task_7 {
         float[] version1TwoHome = {sizeHome1[1] + sizeHome2[1], Math.max(sizeHome1[0], sizeHome2[0])};
         float[] version2TwoHome = {sizeHome1[1] + sizeHome2[0], Math.max(sizeHome1[0], sizeHome2[1])};
         float[] version3TwoHome = {Math.max(sizeHome1[1], sizeHome2[1]), sizeHome1[0] + sizeHome2[0]};
+        float[] version4TwoHome = {sizeHome1[0] + sizeHome2[1], Math.max(sizeHome1[1], sizeHome2[0])};
         Arrays.sort(version1TwoHome);
         Arrays.sort(version2TwoHome);
         Arrays.sort(version3TwoHome);
+        Arrays.sort(version4TwoHome);
         if (squareArea >= squareHome) {
             if (sizeArea[1] >= version1TwoHome[1] && sizeArea[0] >= version1TwoHome[0]) {
                 System.out.println("Дома помещаются");
             } else if (sizeArea[1] >= version2TwoHome[1] && sizeArea[0] >= version2TwoHome[0]) {
                 System.out.println("Дома помещаются");
             } else if (sizeArea[1] >= version3TwoHome[1] && sizeArea[0] >= version3TwoHome[0]) {
+                System.out.println("Дома помещаются");
+            } else if (sizeArea[1] >= version4TwoHome[1] && sizeArea[0] >= version4TwoHome[0]) {
                 System.out.println("Дома помещаются");
             } else {
                 System.out.println("Дома не поместяться!!!!");

@@ -11,14 +11,12 @@ public class Task_11 {
         int lastDigitOfRandomNumber = (int) randomNumber % 10;
         if (randomNumber == 0 || randomNumber == 1) {
             simple = false;
-        } else if (lastDigitOfRandomNumber == 1 || lastDigitOfRandomNumber == 3 || lastDigitOfRandomNumber == 7 || lastDigitOfRandomNumber == 9) {
+        } else if (randomNumber == 2 || lastDigitOfRandomNumber == 1 || lastDigitOfRandomNumber == 3 || lastDigitOfRandomNumber == 7 || lastDigitOfRandomNumber == 9) {
             for (long i = 2; i < (int) (Math.sqrt(randomNumber) + 1); i++) {
                 if (randomNumber % i == 0) {
                     simple = false;
                     break;
-                } else {
-                    simple = true;
-                }
+                } 
             }
         } else {
             simple = false;

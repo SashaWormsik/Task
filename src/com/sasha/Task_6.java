@@ -46,9 +46,7 @@ public class Task_6 {
             nDay = day + 1;
             nMonth = month;
             nYear = year;
-
         }
         System.out.println(nDay + " " + nMonth + " " + nYear);
-
     }
 }

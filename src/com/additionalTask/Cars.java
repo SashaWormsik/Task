@@ -61,7 +61,7 @@ public class Cars {
             System.out.printf("%s старше на %d года(лет), %d месяца(месяцев) and %d дня(дней)\n",
                     carSecond.getNameCar(), diff.getYears(), diff.getMonths(), diff.getDays());
         } else {
-            System.out.println("они выпущены в один день");
+            System.out.println("они выпущены в один день\n");
         }
     }
 

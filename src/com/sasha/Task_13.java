@@ -9,25 +9,24 @@ public class Task_13 {
         int userIn1 = userIn.nextInt();
         System.out.println("Введит конец промежутка");
         int userIn2 = userIn.nextInt();
-        long t = System.currentTimeMillis();
-        for (int i = userIn1; i < userIn2; i++) {   // число для проверки
+        long timeStart = System.currentTimeMillis();
+        for (int i = userIn1; i < userIn2; i++) {
             if (((i % 10) % 2 == 0 || i % 10 == 5 || i == 1) && (i != 5) && (i != 2)) {
                 continue;
             }
-            boolean a = true;
+            boolean isAPrime = true;
             int sqr = (int) (Math.pow(i, 0.5) + 1);
-            for (int j = 3; j < sqr; j++) { // проверяем или делится на другие числа
+            for (int j = 3; j < sqr; j++) {
                 if (i % j == 0 && i != 2) {
-                    a = false;
+                    isAPrime = false;
                     break;
                 }
             }
-            if (a) {
+            if (isAPrime) {
                 System.out.print(i + " ");
             }
         }
-        long t1 = System.currentTimeMillis();
-        System.out.println("ремя выполнения ...");
-        System.out.println(t1 - t);
+        long timeEnd = System.currentTimeMillis();
+        System.out.println("ремя выполнения ..."+ (timeEnd - timeStart) + "мс");
     }
 }

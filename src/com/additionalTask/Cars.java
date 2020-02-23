@@ -70,10 +70,8 @@ public class Cars {
         float mileageCarSecond = 100 * (carSecond.getTankVolume() / carSecond.getFuelConsumption());
         if (mileageCarFirst > mileageCarSecond) {
             System.out.printf("%s проедет больше на %.02f км.\n", carFirst.getNameCar(), (mileageCarFirst - mileageCarSecond));
-
         } else if (mileageCarFirst < mileageCarSecond) {
             System.out.printf("%s проедет больше на %.02f км.\n", carSecond.getNameCar(), (mileageCarSecond - mileageCarFirst));
-
         } else {
             System.out.println("Проедут одинаково\n");
         }

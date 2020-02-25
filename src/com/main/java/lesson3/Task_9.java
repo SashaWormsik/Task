@@ -1,4 +1,4 @@
-package com.sasha;
+package com.main.java.lesson3;
 
 /*
 Имеется последовательность случайных чисел,

@@ -1,4 +1,4 @@
-package com.additionalTask;
+package com.main.java.lesson3.additionalTask;
 
 public class Main {
     public static void main(String[] args) {

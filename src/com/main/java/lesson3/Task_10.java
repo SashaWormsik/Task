@@ -1,4 +1,4 @@
-package com.sasha;
+package com.main.java.lesson3;
 
 /*
 Имеется число. Необходимо посчитать сумму цифр данного числа.

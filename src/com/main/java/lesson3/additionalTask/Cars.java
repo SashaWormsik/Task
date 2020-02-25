@@ -1,4 +1,4 @@
-package com.additionalTask;
+package com.main.java.lesson3.additionalTask;
 
 import java.time.LocalDate;
 import java.time.Period;

@@ -1,4 +1,4 @@
-package com.Lesson3;
+package com.main.java.lesson4;
 
 /*
 определить сумму элементов массива между минимальным и максимальным

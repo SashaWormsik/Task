@@ -1,4 +1,4 @@
-package com.Lesson3;
+package com.main.java.lesson4;
 
 /*
 Данн массив цифр. Вывести индекс максимальной цифры

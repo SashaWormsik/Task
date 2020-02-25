@@ -1,4 +1,4 @@
-package com.Lesson3;
+package com.main.java.lesson4;
 
 /*
 Создать массив, заполнить случайными числами, вывести, перевернуть,

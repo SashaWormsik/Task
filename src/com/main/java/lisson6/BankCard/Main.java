@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         CardHolder cardHolder = new CardHolder("Ivan", "Ivanov");
-        LocalDate val = LocalDate.of(2012, 2, 21);
+        LocalDate val = LocalDate.now().plusYears(4);
         BankCard card = new VirtualCard("Visa",
                 cardHolder,
                 "BPS",

@@ -1,39 +1,35 @@
 package com.main.java.lisson6.ATM;
 
-public class Card {
-    private int numberCard;
-    private int cash;
-    private int pinCode;
-    private boolean isBlocked = true;
+import java.io.Serializable;
 
-    public Card(int numberCard, int cash, int pinCode) {
-        this.numberCard = numberCard;
-        this.cash = cash;
-        this.pinCode = pinCode;
+public class Card implements Serializable {
+    private int codePIN;
+    private int balance;
+    private boolean isBlocked;
+    private int attemptCounter = 3;
+
+    public Card() {
     }
 
-    public int getNumberCard() {
-        return numberCard;
+    public Card(int codePIN, int balance) {
+        this.codePIN = codePIN;
+        this.balance = balance;
     }
 
-    public void setNumberCard(int numberCard) {
-        this.numberCard = numberCard;
+    public int getCodePIN() {
+        return codePIN;
     }
 
-    public int getCash() {
-        return cash;
+    public void setCodePIN(int codePIN) {
+        this.codePIN = codePIN;
     }
 
-    public void setCash(int cash) {
-        this.cash = cash;
+    public int getBalance() {
+        return balance;
     }
 
-    public int getPinCode() {
-        return pinCode;
-    }
-
-    public void setPinCode(int pinCode) {
-        this.pinCode = pinCode;
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     public boolean isBlocked() {
@@ -42,5 +38,23 @@ public class Card {
 
     public void setBlocked(boolean blocked) {
         isBlocked = blocked;
+    }
+
+    public int getAttemptCounter() {
+        return attemptCounter;
+    }
+
+    public void setAttemptCounter(int attemptCounter) {
+        this.attemptCounter = attemptCounter;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "codePIN=" + codePIN +
+                ", balance=" + balance +
+                ", isBlocked=" + isBlocked +
+                ", attemptCounter=" + attemptCounter +
+                '}';
     }
 }

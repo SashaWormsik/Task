@@ -2,10 +2,14 @@ package com.main.java.lisson6.ATM;
 
 import java.io.IOException;
 
-import static com.main.java.lisson6.ATM.StartWorkWithATM.start;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
-        start();
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Card card = new Card();
+        if (Storage.checkAvailability(card)) {
+            card = (Card) Storage.read(card);
+        } else {
+            Storage.createNewCard(card);
+        }
+        UserInterface.StartWork(card);
     }
 }

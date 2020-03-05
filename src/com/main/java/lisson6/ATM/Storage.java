@@ -5,9 +5,9 @@ import java.io.*;
 
 public class Storage {
     public static Object read(Object object) throws IOException, ClassNotFoundException {
-        String name = String.format(".\\%s.txt", object.getClass().getName());
+        String name = String.format("..\\%s.txt", object.getClass().getName());
         File file = new File(name);
-        file.createNewFile();
+        boolean s = file.createNewFile();
         FileInputStream fileInputStream = new FileInputStream(file);
         if (fileInputStream.available() > 0) {
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
@@ -19,7 +19,7 @@ public class Storage {
     }
 
     public static void save(Object object) throws IOException {
-        String name = String.format(".\\%s.txt", object.getClass().getName());
+        String name = String.format("..\\%s.txt", object.getClass().getName());
         FileOutputStream fileOutputStream = new FileOutputStream(name);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
         objectOutputStream.writeObject(object);
@@ -28,7 +28,7 @@ public class Storage {
     }
 
     public static boolean checkAvailability(Object object) {
-        String name = String.format(".\\%s.txt", object.getClass().getName());
+        String name = String.format("..\\%s.txt", object.getClass().getName());
         File file = new File(name);
         return file.exists();
     }

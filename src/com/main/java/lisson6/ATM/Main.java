@@ -4,12 +4,14 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+        StorageService<Card> storageService = new CardStorageService();
+        UserInterface userInterface = new UserInterface();
         Card card = new Card();
-        if (Storage.checkAvailability(card)) {
-            card = (Card) Storage.read(card);
+        if (storageService.checkAvailability(card)) {
+            card = storageService.read(card);
         } else {
-            Storage.createNewCard(card);
+            storageService.create(card);
         }
-        UserInterface.StartWork(card);
+        userInterface.StartWork(card);
     }
 }

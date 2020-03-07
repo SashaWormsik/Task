@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class UserInterface {
+    Service service = new Service();
 
     public static void MENU() {
         System.out.print("\tНажмите 1 узнать балланс счёта.\n" +
@@ -15,7 +16,7 @@ public class UserInterface {
 
     public static boolean continueOrNot() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("\tПродолжить?\n\t1 - ДА 2 - НЕТ");
+        System.out.println("\tПродолжить?\n1 - ДА  \"другая кнопка\"- НЕТ");
         int userIn = Integer.parseInt(bufferedReader.readLine());
         if (userIn == 1) return true;
         else {
@@ -24,8 +25,8 @@ public class UserInterface {
         }
     }
 
-    public static void StartWork(Card card) throws IOException {
-        if (Service.PinVerification(card)) {
+    public void StartWork(Card card) throws IOException {
+        if (service.PinVerification(card)) {
             boolean status = true;
             while (status) {
                 MENU();
@@ -33,27 +34,27 @@ public class UserInterface {
                 int userInput = Integer.parseInt(bufferedReader.readLine());
                 switch (userInput) {
                     case 1:
-                        Service.getBalanceCard(card);
+                        service.getBalanceCard(card);
                         status = continueOrNot();
                         break;
                     case 2:
                         System.out.print("Введите сумму пополнения: ");
                         int replenishmentAmount = Integer.parseInt(bufferedReader.readLine());
-                        Service.putMoneyInCard(replenishmentAmount, card);
+                        service.putMoneyInCard(replenishmentAmount, card);
                         status = continueOrNot();
                         break;
                     case 3:
                         System.out.print("Введите сумму вывода: ");
                         int withdrawalAmount = Integer.parseInt(bufferedReader.readLine());
-                        Service.takeMoneyFromCard(withdrawalAmount, card);
+                        service.takeMoneyFromCard(withdrawalAmount, card);
                         status = continueOrNot();
                         break;
                     case 0:
                         System.out.println("До новых встреч!");
-                        status = false;
                         break;
                     default:
                         System.out.println("Wrong input");
+                        status = continueOrNot();
                 }
             }
         }

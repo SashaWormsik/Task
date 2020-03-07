@@ -53,12 +53,13 @@ public class Service {
     public boolean PinVerification(Card card) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         boolean result = false;
-        int count = card.getAttemptCounter();
         while (card.getAttemptCounter() > 0 && !card.isBlocked()) {
             System.out.println("Введите ПИН код:");
             int userInputPIN = Integer.parseInt(bufferedReader.readLine());
             if (userInputPIN == card.getCodePIN()) {
                 result = true;
+                card.setAttemptCounter(3);
+                storageService.save(card);
                 break;
             } else {
                 card.setAttemptCounter(card.getAttemptCounter() - 1);

@@ -51,6 +51,7 @@ public class UserInterface {
                         break;
                     case 0:
                         System.out.println("До новых встреч!");
+                        status = false;
                         break;
                     default:
                         System.out.println("Wrong input");

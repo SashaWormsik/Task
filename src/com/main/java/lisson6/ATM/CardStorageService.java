@@ -40,7 +40,7 @@ public class CardStorageService implements StorageService<Card> {
     public void create(Card card) throws IOException {
         System.out.println("Карта ещё на создавалась. Давайте создадим!\n");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Введите желвем пин: ");
+        System.out.println("Введите желаемый пин: ");
         int userPin = Integer.parseInt(bufferedReader.readLine());
         card.setCodePIN(userPin);
         System.out.println("Введите желаемый баланс (шиканЁм): ");

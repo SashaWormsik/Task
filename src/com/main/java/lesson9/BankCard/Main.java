@@ -1,5 +1,7 @@
 package com.main.java.lesson9.BankCard;
-
+/*
+Создать иерархию классов описывающих банковские карты. Должно быть хотя бы три уровня иерархии.
+ */
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.main.java.lisson6.Appliances;
+package com.main.java.lesson6.Appliances;
 
 public class Appliances implements TurnOffOrOn{
     private String company;

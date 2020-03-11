@@ -1,6 +1,5 @@
-package com.main.java.lisson6.ATM;
+package com.main.java.lesson6.ATM;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface StorageService<T> {

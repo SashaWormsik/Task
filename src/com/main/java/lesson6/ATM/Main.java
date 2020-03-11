@@ -1,4 +1,4 @@
-package com.main.java.lisson6.ATM;
+package com.main.java.lesson6.ATM;
 
 import java.io.IOException;
 
@@ -9,9 +9,10 @@ public class Main {
         Card card = new Card();
         if (storageService.checkAvailability(card)) {
             card = storageService.read(card);
+            userInterface.StartWork(card);
         } else {
             storageService.create(card);
         }
-        userInterface.StartWork(card);
     }
+
 }

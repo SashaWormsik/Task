@@ -1,4 +1,4 @@
-package com.main.java.lisson6.BankCard;
+package com.main.java.lesson6.BankCard;
 
 import java.time.LocalDate;
 

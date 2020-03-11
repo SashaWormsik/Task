@@ -1,4 +1,4 @@
-package com.main.java.lisson6.ATM;
+package com.main.java.lesson6.ATM;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class Service {
     StorageService<Card> storageService = new CardStorageService();
 
-    public void getBalanceCard(Card card) throws IOException {
+    public void getBalanceCard(Card card) {
         System.out.printf("Баланс вашего счёта равен: %d\n", card.getBalance());
     }
 

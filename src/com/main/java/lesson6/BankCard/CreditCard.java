@@ -1,27 +1,18 @@
-package com.main.java.lisson6.BankCard;
-
+package com.main.java.lesson6.BankCard;
 import java.time.LocalDate;
 
-public class VirtualCard  extends BankCard {
-    private int idNumber;
+public class CreditCard extends RealCard {
+    int balance;
 
-    public VirtualCard(String paymentSystem, CardHolder cardHolder, String issuingBank, LocalDate validity, long cardNumber, int cvv, int pinCode, int idNumber) {
+    public CreditCard(String paymentSystem, CardHolder cardHolder, String issuingBank, LocalDate validity, long cardNumber, int cvv, int pinCode, int balance) {
         super(paymentSystem, cardHolder, issuingBank, validity, cardNumber, cvv, pinCode);
-        this.idNumber = idNumber;
-    }
-
-    public int getIdNumber() {
-        return idNumber;
-    }
-
-    public void setIdNumber(int idNumber) {
-        this.idNumber = idNumber;
+        this.balance = balance;
     }
 
     @Override
     public String toString() {
-        return "VirtualCard{" +
-                "idNumber=" + idNumber +
+        return "CreditCard{" +
+                "balance=" + balance +
                 ", paymentSystem='" + paymentSystem + '\'' +
                 ", cardHolder=" + cardHolder +
                 ", issuingBank='" + issuingBank + '\'' +

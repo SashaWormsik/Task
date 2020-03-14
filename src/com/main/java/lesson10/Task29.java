@@ -18,7 +18,7 @@ public class Task29 {
         String text = reader.readLine();
         reader.close();
 
-        List<String> words = Arrays.asList(text.toLowerCase().replaceAll("[^A-Za-zА-Яа-я_]", " ").split("\\s+"));
+        List<String> words = Arrays.asList(text.toLowerCase().replaceAll("[^A-Za-zА-Яа-я]", " ").split("\\s+"));
         System.out.println(words.toString());
 
         Map<String, Integer> vocabulary = new HashMap<>();

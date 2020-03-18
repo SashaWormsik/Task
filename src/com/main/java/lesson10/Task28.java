@@ -14,11 +14,11 @@ public class Task28 {
             marks.add((int) (Math.random() * 10) + 1);
         }
         System.out.println(marks.toString());
-        ListIterator iterator = marks.listIterator();
-        int markMax = (int) marks.get(0);
+        ListIterator<Integer> iterator = marks.listIterator();
+        Integer markMax = marks.get(0);
         while (iterator.hasNext()) {
-            if ((int)iterator.next() > markMax) {
-                markMax = (int) iterator.previous();
+            if (iterator.next() > markMax) {
+                markMax = iterator.previous();
             }
         }
         System.out.println("Максимальная оценка: " + markMax);

@@ -60,7 +60,7 @@ public class Task31 {
 
     private static List<Integer> findDigit(String text) {
         return Stream.of(text.replaceAll("[^0-9]", " ").trim().split("\\s+")).
-                filter(e -> e.trim().length()>0).
+                filter(e -> e.length()>0).
                 map(Integer::valueOf).collect(Collectors.toList());
     }
 

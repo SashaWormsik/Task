@@ -57,13 +57,13 @@ public class Task30 {
         return text.toString();
     }
 
-    private static long countWord(String text) {
+    private static long countSymbol(String text) {
         return text.chars().filter(c -> !Character.isLetterOrDigit(c) && !Character.isSpaceChar(c)).count();
     }
 
-    private static long countSymbol(String text) {
-        return Stream.of(text.replaceAll("[^A-Za-zА-Яа-я\\s]", " ").trim().split("\\s+"))
-                .filter(e -> e.trim().length() > 0)
+    private static long countWord(String text) {
+        return Stream.of(text.replaceAll("[^A-Za-zА-Яа-я]", " ").trim().split("\\s+"))
+                .filter(e -> e.length() > 0)
                 .filter(e -> Character.isLetter(e.charAt(0)))
                 .count();
     }

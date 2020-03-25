@@ -64,7 +64,6 @@ public class Task30 {
     private static long countWord(String text) {
         return Stream.of(text.replaceAll("[^A-Za-zА-Яа-я]", " ").trim().split("\\s+"))
                 .filter(e -> e.length() > 0)
-                .filter(e -> Character.isLetter(e.charAt(0)))
                 .count();
     }
 

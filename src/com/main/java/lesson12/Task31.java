@@ -74,6 +74,7 @@ public class Task31 {
 
     private static void Operation() {
         System.out.println("ИСХОДНЫЙ ТЕКСТ - " + getTxt());
+        System.out.println("Все числа - "+ findDigit(getTxt()));
         System.out.println("Сумма чисел: " + sumDigit(getTxt()));
         System.out.println("Без повторений - " + removeTheDuplicates(getTxt()));
     }

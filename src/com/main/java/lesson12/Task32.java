@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 /*
 Записать в двоичный файл 20 случайных чисел. Прочитать файл, распечатать числа, найти их среднее арифметическое.
  */
@@ -47,7 +48,7 @@ public class Task32 {
                 mapToDouble(e -> e).
                 filter(Objects::nonNull).
                 average().
-                orElse(Double.NaN);
+                orElse(0.0);
     }
 }
 

@@ -1,9 +1,6 @@
 package com.main.java.lesson12;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /*
@@ -16,7 +13,7 @@ public class Task30 {
         if (!checkAvailabilityFile()) {
             recordNewFail();
         }
-        Operation();
+        operation();
     }
 
     private static void recordNewFail() {
@@ -63,11 +60,11 @@ public class Task30 {
 
     private static long countWord(String text) {
         return Stream.of(text.replaceAll("[^A-Za-zА-Яа-я]", " ").trim().split("\\s+"))
-                .filter(e -> e.length() > 0)
+                .filter(e -> !e.isEmpty())
                 .count();
     }
 
-    private static void Operation() {
+    private static void operation() {
         System.out.println("ИСХОДНЫЙ ТЕКСТ - " + getTxt());
         System.out.println("Колличество слов: " + countWord(getTxt()));
         System.out.println("Колличество знаков препинания: " + countSymbol(getTxt()));

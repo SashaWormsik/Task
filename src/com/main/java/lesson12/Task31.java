@@ -1,8 +1,8 @@
 package com.main.java.lesson12;
 
 import java.io.*;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,7 +17,7 @@ public class Task31 {
         if (!checkAvailabilityFile()) {
             recordNewFail();
         }
-        Operation();
+        operation();
     }
 
     private static void recordNewFail() {
@@ -60,21 +60,21 @@ public class Task31 {
 
     private static List<Integer> findDigit(String text) {
         return Stream.of(text.replaceAll("[^0-9]", " ").trim().split("\\s+")).
-                filter(e -> e.length()>0).
+                filter(e -> !e.isEmpty()).
                 map(Integer::valueOf).collect(Collectors.toList());
     }
 
     private static double sumDigit(String text) {
-        return findDigit(text).stream().reduce(Integer::sum).orElse(0);
+        return findDigit(text).stream().filter(Objects::nonNull).mapToDouble(e -> e).sum();
     }
 
     private static List<Integer> removeTheDuplicates(String text) {
         return findDigit(text).stream().distinct().collect(Collectors.toList());
     }
 
-    private static void Operation() {
+    private static void operation() {
         System.out.println("ИСХОДНЫЙ ТЕКСТ - " + getTxt());
-        System.out.println("Все числа - "+ findDigit(getTxt()));
+        System.out.println("Все числа - " + findDigit(getTxt()));
         System.out.println("Сумма чисел: " + sumDigit(getTxt()));
         System.out.println("Без повторений - " + removeTheDuplicates(getTxt()));
     }

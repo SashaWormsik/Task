@@ -9,14 +9,19 @@ import java.util.stream.Collectors;
  */
 public class Task33 {
 
-    private static final File file = new File("D:\\Калуга ВХОДЫ  ДОМА.dwg");
 
     public static void main(String[] args) {
-        if (file.exists()) {
-            System.out.println("Список папок: " + getDirectoryName(file));
-            System.out.println("Список файлов: " + getFileName(file));
-        } else {
-            System.out.println("Такого пути нет");
+         File file = new File("..\\");
+
+        try {
+            if (file.exists()) {
+                System.out.println("Список папок: " + getDirectoryName(file));
+                System.out.println("Список файлов: " + getFileName(file));
+            } else {
+                System.out.println("Такого пути нет");
+            }
+        } catch (NullPointerException e){
+            System.out.println("передан Null");
         }
     }
 
@@ -40,7 +45,7 @@ public class Task33 {
                     collect(Collectors.toList());
         } else {
             System.out.println("Данный путь указывает на файл");
-            return null;
+            return Collections.emptyList();
         }
     }
 

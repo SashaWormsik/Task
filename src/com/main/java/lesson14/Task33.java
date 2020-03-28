@@ -6,7 +6,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
+/*
+Вывести список файлов и каталогов выбранного каталога на диске.
+Файлы и каталоги должны быть разделены
+ */
 public class Task33 {
 
     private static final File file = new File("..\\");

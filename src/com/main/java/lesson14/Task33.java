@@ -1,10 +1,7 @@
 package com.main.java.lesson14;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 /*
 Вывести список файлов и каталогов выбранного каталога на диске.
@@ -12,7 +9,7 @@ import java.util.stream.Collectors;
  */
 public class Task33 {
 
-    private static final File file = new File("..\\");
+    private static final File file = new File("D:\\Калуга ВХОДЫ  ДОМА.dwg");
 
     public static void main(String[] args) {
         if (file.exists()) {
@@ -30,8 +27,7 @@ public class Task33 {
                     map(File::getName).
                     collect(Collectors.toList());
         } else {
-            List<String> list = new ArrayList<>();
-            list.add(file.getName());
+            List<String> list = Collections.singletonList(file.getName());
             System.out.println("Данный путь указывает на один файл");
             return list;
         }

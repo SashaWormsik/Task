@@ -27,9 +27,8 @@ public class Task33 {
                     map(File::getName).
                     collect(Collectors.toList());
         } else {
-            List<String> list = Collections.singletonList(file.getName());
             System.out.println("Данный путь указывает на один файл");
-            return list;
+            return Collections.singletonList(file.getName());
         }
     }
 

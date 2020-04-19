@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-        String string = "         R     12  345 67891          01      ";
+        String string = "        1 R     1  345 67891          01      ";
         System.out.println(checkWithRegExp(string));
     }
 

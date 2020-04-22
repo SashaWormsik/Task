@@ -1,4 +1,4 @@
-package lesson15;
+package lesson15.Books;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,16 +8,16 @@ import java.util.stream.Collectors;
 public class Task {
     public static void main(String[] args) {
         FileBooks fileBooks = new FileBooks();
-        if (!fileBooks.checkAvailabilityFile()){
+        if (!fileBooks.checkAvailabilityFile()) {
             fileBooks.CreateFile();
             fileBooks.writeToFile(ListBooks());
         }
-        Map <String, String> map = fileBooks.ReadFile().stream()
+        Map<String, String> map = fileBooks.ReadFile().stream()
                 .collect(Collectors.groupingBy(Book::getAuthor,
                         Collectors.mapping(Book::getTitle,
                                 Collectors.joining(", "))));
-     map.forEach((key, value) -> System.out.println(key + " : " + value));
-     fileBooks.fileDelete();
+        map.forEach((key, value) -> System.out.println(key + " : " + value));
+        fileBooks.fileDelete();
     }
 
 

@@ -1,4 +1,4 @@
-package lesson15;
+package lesson15.Books;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public class FileBooks {
     private File directory = new File(".\\Books");
     private File file = new File(".\\Books\\books.txt");
 
-    public boolean checkAvailabilityFile (){
+    public boolean checkAvailabilityFile() {
         return this.file.exists();
     }
 
@@ -30,7 +30,6 @@ public class FileBooks {
         } catch (IOException e) {
             System.out.println("файл не записан");
         }
-
     }
 
     public List<Book> ReadFile() {

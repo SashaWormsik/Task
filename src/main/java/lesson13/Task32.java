@@ -31,10 +31,9 @@ public class Task32 {
     private static List<Integer> readFile() {
         List<Integer> num = new ArrayList<>();
         try (DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(path)))) {
-            int result = in.readInt();
-            while (in.available() > 0) {
+            while (in.available() > 0) { //исправил сегодня (27.04), после того,как Вике сказал, что выводится 19 чисел
+                int result = in.readInt();
                 num.add(result);
-                result = in.readInt();
             }
         } catch (IOException e) {
             System.out.println("ERROR");

@@ -9,7 +9,7 @@ public class Main {
         System.out.println(checkWithRegExp(string));
     }
 
-    public static boolean checkWithRegExp(String userString){
+    public static boolean checkWithRegExp(String userString) {
         Pattern p = Pattern.compile("^[EDR][0-9]{12}$");
         Matcher m = p.matcher(userString.replaceAll(" ", ""));
         return m.matches();

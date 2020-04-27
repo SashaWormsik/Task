@@ -20,7 +20,7 @@ public class Task32 {
     private static void writeNumbersToTheFile() {
         try (DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(path)))) {
             for (int i = 0; i < 20; i++) {
-                out.writeInt((int) (Math.random() * 10 + 1));
+                out.writeInt((int) (Math.random() * 5 + 6));
             }
             System.out.println("Файл записан");
         } catch (IOException e) {
@@ -31,10 +31,9 @@ public class Task32 {
     private static List<Integer> readFile() {
         List<Integer> num = new ArrayList<>();
         try (DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(path)))) {
-            int result = in.readInt();
-            while (in.available() > 0) {
+            while (in.available() > 0) {  //исправил сегодня (27.04), после того,как Вике сказал, что выводится 19 чисел
+                int result = in.readInt();
                 num.add(result);
-                result = in.readInt();
             }
         } catch (IOException e) {
             System.out.println("ERROR");

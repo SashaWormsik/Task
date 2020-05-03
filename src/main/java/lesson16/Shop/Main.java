@@ -2,6 +2,7 @@ package lesson16.Shop;
 
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.concurrent.Semaphore;
@@ -15,7 +16,7 @@ public class Main {
     }
 
     static Queue<Buyer> generationBuyers(int number) {
-        Queue<Buyer> buyers = new PriorityQueue<>();
+        Queue<Buyer> buyers = new ArrayDeque<>();
         for (int i = 0; i < number; i++) {
             buyers.add(new Buyer("Покупатель " + i));
         }
